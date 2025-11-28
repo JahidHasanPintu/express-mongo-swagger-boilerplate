@@ -4,9 +4,11 @@ const app = express();
 const routes = require('./app/routes');
 const notFound = require('./app/middleware/notFound');
 const globalErrorHandler = require('./app/middleware/globalErrorHandler');
+const { swaggerUiMiddleware, swaggerSpec } = require('./app/config/swagger.config');
 app.use(cors());
 app.use(express.json());
 app.use('/api/v1', routes);
+app.use("/api-docs", swaggerUiMiddleware.serve, swaggerUiMiddleware.setup(swaggerSpec));
 app.get('/', (req, res) => {
     res.json({
         success: true,

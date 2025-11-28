@@ -8,6 +8,7 @@ async function main() {
     console.log('database is connected');
     app.listen(config.port, () => {
       console.log(`app is listening on port ${config.port}`);
+      console.log(`API doc: http://localhost:${config.port}/api-docs`);
     });
   } catch (err) {
     console.log(err);
