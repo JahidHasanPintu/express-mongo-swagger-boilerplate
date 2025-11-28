@@ -8,7 +8,17 @@ const options = {
     info: {
       title: "Express Mongo API",
       version: "1.0.0",
-      description: "API documentation for express mongo boilerplate- YOU CAN EDIT THIS IN swagger.config.js FILE",
+      description:
+        "API documentation for express mongo boilerplate- YOU CAN EDIT THIS IN swagger.config.js FILE",
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
     },
     servers: [
       {
@@ -18,10 +28,7 @@ const options = {
     ],
   },
 
-  apis: [
-    "./src/app/modules/*/*.routes.js", 
-    "./src/app/modules/*/*.schema.js",
-  ],
+  apis: ["./src/app/modules/*/*.routes.js", "./src/app/modules/*/*.schema.js"],
 };
 
 export const swaggerSpec = swaggerJsdoc(options);
