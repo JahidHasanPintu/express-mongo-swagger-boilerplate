@@ -22,7 +22,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${config.port}/api/v1`,
+        url: `${config.backend_url}/api/v1`,
         description: "Local server",
       },
     ],

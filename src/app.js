@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const routes = require('./app/routes');
 const notFound = require('./app/middleware/notFound');
-const globalErrorHandler = require('./app/middleware/globalErrorHandler');
+const globalErrorHandler = require('./app/middleware/globalErrorhandler.js');
 const { swaggerUiMiddleware, swaggerSpec } = require('./app/config/swagger.config');
 app.use(cors());
 app.use(express.json());
